@@ -1,14 +1,14 @@
-<ion-view view-title="Session">
+<ion-view view-title="Goal">
   <ion-content>
     <div class="list card">
       <div class="item">
-        <h3>{{goal.name}}</h3>
-        <h2>{{goal.cost}}</h2>
-        <p>{{goal.amount_saved}}</p>
+        <h1>{{goal.name}}</h1>
+        <h2>Total Cost: ${{goal.cost}}</h2>
       </div>
       <div class="item item-body">
-        <p>{{goal.monthly_budget}}</p>
-        <p>{{goal.time_left}}</p>
+        <p>You've saved ${{goal.amount_saved}} so far</p>
+        <p>You allocated ${{goal.monthly_budget}} every month</p>
+        <p>{{goal.time_left}} months until completion</p>
       </div>
       <div class="item tabs tabs-secondary tabs-icon-left">
         <a class="tab-item">
