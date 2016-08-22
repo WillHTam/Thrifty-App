@@ -1,7 +1,7 @@
 <ion-view view-title="Goals">
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="goal in goals" href="#/app/goals/{{goal.id}}">
+      <ion-item id="goal-list" ng-repeat="goal in goals" href="#/app/goals/{{goal.id}}">
         {{goal.name}}
       </ion-item>
     </ion-list>

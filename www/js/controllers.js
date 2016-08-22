@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['starter.services'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $http) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -33,10 +33,22 @@ angular.module('starter.controllers', ['starter.services'])
   $scope.doLogin = function() {
     console.log('Doing login', $scope.loginData);
 
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
+    var data = {
+      email: "cat@cat.com",
+      password: "purr"
+    }
+
+    $http({
+      method: 'POST',
+      url: 'http://localhost:4200/login',
+      data: data
+    })
+    .success( function (response) {
+      console.log(response)
+    })
+
     $timeout(function() {
-      $scope.closeLogin();
+      $scope.loginData();
     }, 1000);
   };
 })
